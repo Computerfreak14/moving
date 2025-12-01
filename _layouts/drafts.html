@@ -7,14 +7,14 @@ layout: default
       <title>{{ site.title }}</title>
   </head>
   <div class="home-title">
-    <p class="home-heading">{{ site.title }}</p>
+    <p class="home-heading">{{ site.title }} - Drafts</p>
     <p class="home-sub-heading">{{- site.description | escape -}}</p>
   </div>
 
   {%- if site.posts.size > 0 -%}
   <ul class="post-list">
       {% for post in site.posts  %}
-      {%- if  post.draft = true and  post.draft != 'hidden' -%}
+      {%- if  post.draft == true and  post.draft != 'hidden' -%}
       {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
       {% capture next_year %}{{ post.previous.date | date: "%Y" }}{% endcapture %}
   
